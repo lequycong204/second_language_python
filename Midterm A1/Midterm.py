@@ -1,4 +1,4 @@
-
+import math
 
 
 def find_minimum_sum(nums):
@@ -34,13 +34,15 @@ def find_minimum_sum(nums):
     return -1
 
 def cosin_distance(v1, v2):
-    """
-    Tính khoảng cách cosin của 2 vector,
-    input: v1, v2 là danh sách có cùng kích thước
-    Cosin distance được tính theo công thức:
-    cho trong đề bài.
-    """
-    return -1
+    
+    dot = sum(x * y for x, y in zip(v1, v2))
+    norm1 = math.sqrt(sum(x * x for x in v1))
+    norm2 = math.sqrt(sum(y * y for y in v2))
+    if norm1 == 0 or norm2 == 0:
+        return 0.0  # Trường hợp vector 0
+    cos_sim = dot / (norm1 * norm2)
+    
+    return cos_sim
     
 def get_hightest_gdp(country_list):
     """
