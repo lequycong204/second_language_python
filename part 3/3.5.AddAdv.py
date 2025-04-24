@@ -12,7 +12,7 @@ def addNum(a, b):
     int_a = 0
     int_b = 0
 
-    # chuyển đổi danh sách thành số nguyên
+    # convert list to int
     for i in range(len(a)):
         int_a += a[i] * (10 ** (len(a) - i - 1))
 
@@ -21,7 +21,7 @@ def addNum(a, b):
 
     int_c = int_a + int_b # tổng 2 số nguyên
 
-    # chuyển đổi số nguyên thành danh sách
+    # convert int to list
     for i in str(int_c):
         c.append(int(i))   
     

@@ -16,8 +16,14 @@ def inputMatrix():
 def isMagicSquare(m):
     if len(m) != len(m[0]): 
         return False
-
+    
     array = np.array(m)
+
+    flat_elements = array.flatten()
+    if len(np.unique(flat_elements)) != len(flat_elements):
+        return False
+
+    
     
     # Calculate the sum of each row and column
     sum_row = np.sum(array, axis=1)
@@ -36,5 +42,5 @@ def isMagicSquare(m):
     return sum_main_diag == sum_sub_diag == sum_row[0]
 
 
-m = inputMatrix()
+m = [[1,1,1], [1,1,1], [1,1,1]]
 print(isMagicSquare(m))
